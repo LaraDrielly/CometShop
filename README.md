@@ -24,7 +24,7 @@ Este site é uma plataforma de e-commerce especializada na comercialização de 
 
 
 ### Logo
-- ![Logo CometShop]()
+- ![Logo CometShop](https://github.com/LaraDrielly/CometShop/blob/main/LogoCometShop.png?raw=true)
 
 ---
 
