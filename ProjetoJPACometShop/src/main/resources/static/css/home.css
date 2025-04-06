@@ -1,0 +1,581 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #FDF6F0;
+    height: 60px;
+    padding: 10px;
+    border-bottom: 2px solid #620246;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 145px;
+    margin-left: 680px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.icons img {
+    height: 20px;
+    cursor: pointer;
+}
+
+.icon{
+    height: 35px;
+}
+
+.icon-box{
+    display: flex;
+    align-items: center;
+    height: 45px;
+}
+
+.search-bar {
+    padding: 8px 8px;
+    border: none;
+    border-bottom: 1px solid #620246;
+    width: 150px;
+    background-color: #FDF6F0;
+    font-size: 0.9em;
+    margin-right: 15px;
+    outline: none;
+}
+
+.search-bar::placeholder{
+    color: #620246;
+}
+
+.icons img:nth-child(1) {
+    width: 15px;
+    height: 17px;
+    margin-right: -12px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #620246;
+}
+
+.capaPrincipal{
+    width: 100%;
+    height: 620px;
+    margin-top: 80px;
+}
+
+.menu {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 80px 30px;
+}
+
+.menu div {
+    text-align: center;
+    font-family: "Aboreto";
+    width: 360px;
+}
+
+.menu div img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 35px;
+}
+
+.menu div img:hover {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 35px;
+    opacity: 50%;
+}
+
+/* Hover botão cabelo */
+
+.btCabelo {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btCabelo img {
+    transition: opacity 0.7s ease-in-out;
+}
+
+.btCabelo .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btCabelo:hover img {
+    opacity: 0.5;
+}
+
+.btCabelo:hover .overlay {
+    opacity: 1;
+}
+
+.btCabelo .overlay p {
+    color: #8B0052;
+    font-size: 32px;
+    font-family: "Aboreto";
+    font-weight: bold;
+}
+
+.btCabelo .texto-abaixo {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: "Aboreto";
+    color: #620246;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btCabelo:hover .texto-abaixo {
+    opacity: 0;
+}
+
+/* Hover botão Perfumes */
+
+.btPerfumes {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btPerfumes img {
+    transition: opacity 0.7s ease-in-out;
+}
+
+.btPerfumes .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btPerfumes:hover img {
+    opacity: 0.5;
+}
+
+.btPerfumes:hover .overlay {
+    opacity: 1;
+}
+
+.btPerfumes .overlay p {
+    color: #8B0052;
+    font-size: 32px;
+    font-family: "Aboreto";
+    font-weight: bold;
+}
+
+.btPerfumes .texto-abaixo {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: "Aboreto";
+    color: #620246;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btPerfumes:hover .texto-abaixo {
+    opacity: 0;
+}
+
+/* Hover botão Unhas */
+
+.btUnhas {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btUnhas img {
+    transition: opacity 0.7s ease-in-out;
+}
+
+.btUnhas .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btUnhas:hover img {
+    opacity: 0.5;
+}
+
+.btUnhas:hover .overlay {
+    opacity: 1;
+}
+
+.btUnhas .overlay p {
+    color: #8B0052;
+    font-size: 32px;
+    font-family: "Aboreto";
+    font-weight: bold;
+}
+
+.btUnhas .texto-abaixo {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: "Aboreto";
+    color: #620246;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btUnhas:hover .texto-abaixo {
+    opacity: 0;
+}
+
+/* Hover botão maquiagens */
+
+.btMaquiagens{
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btMaquiagens img {
+    transition: opacity 0.7s ease-in-out;
+}
+
+.btMaquiagens .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btMaquiagens:hover img {
+    opacity: 0.5;
+}
+
+.btMaquiagens:hover .overlay {
+    opacity: 1;
+}
+
+.btMaquiagens .overlay p {
+    color: #8B0052;
+    font-size: 32px;
+    font-family: "Aboreto";
+    font-weight: bold;
+}
+
+.btMaquiagens .texto-abaixo {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: "Aboreto";
+    color: #620246;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btMaquiagens:hover .texto-abaixo {
+    opacity: 0;
+}
+
+/* Hover botão Skin Care */
+
+.btSkinCare {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btSkinCare img {
+    transition: opacity 0.7s ease-in-out;
+}
+
+.btSkinCare .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btSkinCare:hover img {
+    opacity: 0.5;
+}
+
+.btSkinCare:hover .overlay {
+    opacity: 1;
+}
+
+.btSkinCare .overlay p {
+    color: #8B0052;
+    font-size: 32px;
+    font-family: "Aboreto";
+    font-weight: bold;
+}
+
+.btSkinCare .texto-abaixo {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: "Aboreto";
+    color: #620246;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btSkinCare:hover .texto-abaixo {
+    opacity: 0;
+}
+
+/* Hover botão Corpo e banho */
+
+.btCorpoBanho {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btCorpoBanho img {
+    transition: opacity 0.7s ease-in-out;
+}
+
+.btCorpoBanho .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btCorpoBanho:hover img {
+    opacity: 0.5;
+}
+
+.btCorpoBanho:hover .overlay {
+    opacity: 1;
+}
+
+.btCorpoBanho .overlay p {
+    color: #8B0052;
+    font-size: 32px;
+    font-family: "aboreto";
+    font-weight: bold;
+}
+
+.btCorpoBanho .texto-abaixo {
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: "Aboreto";
+    color: #620246;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.btCorpoBanho:hover .texto-abaixo {
+    opacity: 0;
+}
+
+
+.top3 {
+    width: 100%;
+    height: 610px;
+    background-color: #FDF6F0;
+    padding: 30px 0;
+    margin-bottom: 80px;
+}
+
+h2{
+    font-family: "playfair display";
+    font-size: 45px;
+    color: #620246;
+    font-weight: 400;
+    margin-left: 75px;
+    margin-top: 2px;
+}
+
+h2:nth-child(2){
+    margin-top: -50px;
+    margin-left: 165px;
+}
+
+.produtos-top3 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.produto-top img {
+    width: 300px;
+    height: 300px;
+    border-radius: 160px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 1s ease-in-out;
+}
+
+.produto-top img:hover {
+    width: 310px;
+    height: 310px;
+    border-radius: 160px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.18);
+}
+
+.produto-top p {
+    font-family: "Klee One";
+    font-size: 25px;
+    font-weight: 500;
+    color: #620246;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.produtos {
+    background-color: #FFFFFF;
+    height: 720px;
+}
+
+h2{
+    font-family: "playfair display";
+    font-size: 45px;
+    color: #620246;
+    font-weight: 400;
+    margin-left: 75px;
+}
+
+.caixa-produtos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card-produto {
+    width: 280px;
+    height: 400px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.card-produto img {
+    width: 280px;
+    height: 330px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.card-produto img:hover {
+    opacity: 85%;
+}
+
+.card-produto p{
+    font-family: "aboreto";
+    font-size: 25px;
+    text-align: start;
+}
+
+.card-produto button{
+    height: 45px;
+    width: 280px;
+    font-family: "Klee one";
+    background-color: #620246;
+    border-radius: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 7px;
+}
+
+
+.img-container {
+    background-color: #FCF1F8;
+    height: 510px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    font-family: "klee one";
+    font-size: 25px;
+    color: #620246;
+}
+
+.img-container img {
+    height: 400px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 56px;
+}
+
+.imgPessoa{
+    display: flex;
+
+    p{
+        width: 630px;
+        position: absolute;
+        margin-left: 450px;
+    }
+}
+
+.imgCreme{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    p{
+        width: 630px;
+    }
+}
+
+footer {
+    background-color: #620246;
+    color: #FDF6F0;
+    text-align: center;
+    padding: 20px;
+}

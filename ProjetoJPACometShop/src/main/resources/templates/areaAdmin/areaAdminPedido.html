@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comet Shop</title>
+    <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <img th:src="@{/imagens/CometShop Logo.svg}" alt="Logo" />
+</div>
+
+<div class="container">
+    <div class="sidebar">
+        <a th:href="@{/areaAdminCliente}">CLIENTES</a>
+        <a th:href="@{/areaAdminProduto}">PRODUTOS</a>
+        <a th:href="@{/areaAdminPedido}">PEDIDOS</a>
+        <a th:href="@{/areaAdminEstoque}">ESTOQUE</a>
+    </div>
+
+    <div class="content">
+        <div class="buttons">
+            <button>ADICIONAR</button>
+            <button>LER</button>
+            <button>EDITAR</button>
+            <button>REMOVER</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
