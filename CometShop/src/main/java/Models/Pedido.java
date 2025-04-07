@@ -2,7 +2,7 @@ package Models;
 
 import jakarta.persistence.*;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "pedido")
@@ -12,7 +12,7 @@ public class Pedido {
     private int id_pedido;
     private int cod_carrinho;
     private int cod_tipo_pagamento;
-    private Timestamp pedDtPedido;
+    private Date pedDtPedido;
     private float pedValorTotal;
     private String pedCepUser;
     private String pedBairro;
@@ -23,7 +23,7 @@ public class Pedido {
 
     public Pedido() {}
 
-    public Pedido(int id_pedido, int cod_carrinho, int cod_tipo_pagamento, Timestamp pedDtPedido,
+    public Pedido(int id_pedido, int cod_carrinho, int cod_tipo_pagamento, Date pedDtPedido,
                   float pedValorTotal, String pedCepUser, String pedBairro, String pedRuaAvenida,
                   String pedComp,int pedNum, long pedTel) {
         this.id_pedido = id_pedido;
@@ -63,11 +63,11 @@ public class Pedido {
         this.cod_tipo_pagamento = cod_tipo_pagamento;
     }
 
-    public Timestamp getPedDtPedido() {
+    public Date getPedDtPedido() {
         return pedDtPedido;
     }
 
-    public void setPedDtPedido(Timestamp pedDtPedido) {
+    public void setPedDtPedido(Date pedDtPedido) {
         this.pedDtPedido = pedDtPedido;
     }
 

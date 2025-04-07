@@ -15,7 +15,7 @@ public class Produtos {
 
     public Produtos() {}
 
-    public Produtos(int id_adm, int cod_user, String prodDesc, String prodNome, float prodPreco) {
+    public Produtos(int id_produto, int cod_user, String prodDesc, String prodNome, float prodPreco) {
         this.id_produto = id_produto;
         this.cod_user = cod_user;
         this.prodDesc = prodDesc;
