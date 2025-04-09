@@ -579,3 +579,19 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+.contador-sacola {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background-color: #620246;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Klee One";
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 1001;
+}

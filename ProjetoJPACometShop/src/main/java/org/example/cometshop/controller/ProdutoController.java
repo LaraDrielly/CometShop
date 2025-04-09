@@ -14,6 +14,10 @@ public class ProdutoController {
     @Autowired
     private ProdutoRepository produtoRepository;
 
+    @GetMapping("/produto")
+    public String produto() {
+        return "produto"; // Nome do arquivo produto.html em templates
+    }
     @GetMapping
     public String listar(Model model) {
         model.addAttribute("produtos", produtoRepository.findAll());
