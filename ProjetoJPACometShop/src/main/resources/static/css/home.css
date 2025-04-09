@@ -29,10 +29,10 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
+}
 
-    a{
-        text-decoration: none;
-    }
+.icon-box{
+    text-decoration: none;
 }
 
 .icons img {
@@ -92,6 +92,10 @@ header {
     text-align: center;
     font-family: "Aboreto";
     width: 360px;
+}
+
+.menu a{
+    text-decoration: none;
 }
 
 .menu div img {

@@ -41,10 +41,31 @@ public class PageController {
         return "cadastro";
     }
 
-    @GetMapping("/categoria")
-    public String categoria() {
-        return "categoria";
+    @GetMapping("/categoriaCabelos")
+    public String categoriaCabelo() {
+        return "categoriaCabelo";
     }
+    @GetMapping("/categoriaPerfumes")
+    public String categoriaPerfumes() {
+        return "categoriaPerfumes";
+    }
+    @GetMapping("/categoriaUnhas")
+    public String categoriaUnhas() {
+        return "categoriaUnhas";
+    }
+    @GetMapping("/categoriaMaquiagem")
+    public String categoriaMaquiagem() {
+        return "categoriaMaquiagem";
+    }
+    @GetMapping("/categoriaSkinCare")
+    public String categoriaSkinCare() {
+        return "categoriaSkinCare";
+    }
+    @GetMapping("/categoriaCorpoBanho")
+    public String categoriaCorpoBanho() {
+        return "categoriaCorpoBanho";
+    }
+
 
     @GetMapping("/produto")
     public String produto() {
