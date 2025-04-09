@@ -26,14 +26,14 @@
 
 <main>
     <section class="category">
-        <h1>Produtos para cabelos</h1>
+        <h1>Produtos para as UNHAS</h1>
         <div class="other-categories">
-            <button class="other-category-button">Cabelos</button>
-            <button class="other-category-button">Perfumaria</button>
-            <button class="other-category-button">Unhas</button>
-            <button class="other-category-button">Maquiagem</button>
-            <button class="other-category-button">Skin care</button>
-            <button class="other-category-button">Corpo e banho</button>
+            <a th:href="@{/categoriaCabelos}"><button class="other-category-button">Cabelos</button></a>
+            <a th:href="@{/categoriaPerfumes}"><button class="other-category-button">Perfumaria</button></a>
+            <button id="buttonCategoria" class="other-category-button">Unhas</button>
+            <a th:href="@{/categoriaMaquiagem}"><button class="other-category-button">Maquiagem</button></a>
+            <a th:href="@{/categoriaSkinCare}"><button class="other-category-button">Skin Care</button></a>
+            <a th:href="@{/categoriaCorpoBanho}"><button class="other-category-button">Corpo e banho</button></a>
         </div>
     </section>
 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comet Shop</title>
+    <link rel="stylesheet" th:href="@{/css/categoria.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <img th:src="@{/Imagens/CometShop Logo.svg}" alt="Logo Comet Shop" class="logo">
+    <div class="icons">
+        <img th:src="@{/Imagens/search.png}" alt="lupa">
+        <input type="text" placeholder="Pesquisar..." class="search-bar">
+        <img th:src="@{/Imagens/user.png}" alt="usuário">
+        <img th:src="@{/Imagens/sacola.png}" alt="sacola"class="sacola">
+    </div>
+</header>
+
+<a th:href="@{/}"><img th:src="@{/Imagens/voltar.png}" alt="seta" class="voltar"></a>
+
+<main>
+    <section class="category">
+        <h1>Produtos de MAQUIAGEM</h1>
+        <div class="other-categories">
+            <a th:href="@{/categoriaCabelos}"><button class="other-category-button">Cabelos</button></a>
+            <a th:href="@{/categoriaPerfumes}"><button class="other-category-button">Perfumaria</button></a>
+            <a th:href="@{/categoriaUnhas}"><button class="other-category-button">Unhas</button></a>
+            <button id="buttonCategoria" class="other-category-button">Maquiagem</button>
+            <a th:href="@{/categoriaSkinCare}"><button class="other-category-button">Skin Care</button></a>
+            <a th:href="@{/categoriaCorpoBanho}"><button class="other-category-button">Corpo e banho</button></a>
+        </div>
+    </section>
+
+    <div class="product-box">
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+    </div>
+
+    <div class="product-box">
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+        <div class="product-card">
+            <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+            <p>Soft Pinch Tinted Lip Oil</p>
+            <button>Adicionar à sacola</button>
+        </div>
+    </div>
+
+    <button class="more-products">Mais produtos</button>
+</main>
+
+<footer>
+    <p>&copy; 2025 Comet Shop</p>
+</footer>
+</body>
+</html>
