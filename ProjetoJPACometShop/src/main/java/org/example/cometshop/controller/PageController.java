@@ -43,7 +43,7 @@ public class PageController {
 
     @GetMapping("/categoria")
     public String categoria() {
-        return "categoria";
+        return "categoriaCabelo";
     }
 
     @GetMapping("/produto")
