@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #FDF6F0;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #620246;
+    margin-bottom: 40px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.cometshop-logo {
+    width: 145px;
+}
+
+.voltar{
+    width: 95px;
+    margin-top: -50px;
+    margin-left: 15px;
+    position: absolute;
+}
+
+
+.carrinho {
+    display: flex;
+    justify-content: space-evenly;
+    height: 460px;
+    margin-top: 170px;
+}
+
+.sacola-vazia {
+    height: 120px;
+    width: 550px;
+    background-color: #FDF6F0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    gap: 30px;
+}
+
+.sacola-vazia img {
+    width: 80px;
+}
+
+.sacola-vazia p {
+    font-family: "aboreto";
+    font-size: 25px;
+    margin-bottom: 1px;
+}
+
+.sacola-vazia a {
+    color: #620246;
+    font-size: 16px;
+    font-family: "klee one";
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+}
+
+.resumo {
+    background: #FCF1F8;
+    padding: 10px 40px;
+    border-radius: 10px;
+    width: 430px;
+    height: 340px;
+    box-shadow: 0.5px 0.5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resumo h2 {
+    margin-bottom: 10px;
+    font-size: 35px;
+    font-family: "aboreto";
+    color: #620246;
+    margin-left: 0;
+}
+
+.resumo hr {
+    background-color: #620246;
+    height: 1px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.resumo p {
+    font-size: 18px;
+    font-family: "klee one";
+
+}
+
+.resumo p strong {
+    font-size: 30px;
+    color: #620246;
+}
+
+.btn-finalizar {
+    height: 50px;
+    width: 100%;
+    background-color: #620246;
+    border-radius: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-family: "klee one";
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.you-might-like {
+    margin-top: 60px;
+    padding-top: 0.5px;
+    background-color: #FDF6F0;
+    height: 720px;
+}
+
+h2{
+    font-family: "playfair display";
+    font-size: 45px;
+    color: #620246;
+    font-weight: 400;
+    margin-left: 75px;
+}
+
+h2:nth-child(2){
+    margin-top: -50px;
+    margin-left: 160px;
+}
+
+.product-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.product-card {
+    width: 280px;
+    height: 400px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.product-card img {
+    width: 280px;
+    height: 330px;
+}
+
+.product-card p{
+    font-family: "aboreto";
+    font-size: 25px;
+    text-align: start;
+}
+
+.product-card button{
+    height: 45px;
+    width: 280px;
+    font-family: "Klee one";
+    background-color: #620246;
+    border-radius: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 7px;
+}
+
+footer {
+    background-color: #620246;
+    padding: 30px;
+    text-align: center;
+    margin-top: auto;
+    width: 96%;
+    color: white;
+}

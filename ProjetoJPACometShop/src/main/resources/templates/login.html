@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:hrefth="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - CometShop</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Cabeçalho -->
+<header class="header">
+    <img
+            class="cometshop-logo"
+            th:src="@{/Imagens/CometShop Logo.svg}"
+            alt="Logo da CometShop"
+    />
+</header>
+
+
+<a th:href="@{/}"><img th:src="@{/Imagens/voltar.png}" alt="voltar" class="voltar"></a>
+<!-- Container do Formulário de Login -->
+<div class="login-container">
+    <div class="login-box">
+        <!-- Título do Formulário -->
+        <h1 id="title">Realize o seu login</h1>
+
+        <!-- Campo de E-mail -->
+        <div class="input-field">
+            <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="E-mail"
+                    required
+            />
+        </div>
+
+        <!-- Campo de Senha -->
+        <div class="input-field">
+            <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Senha"
+                    required
+            />
+        </div>
+
+        <!-- Botão de Entrar -->
+        <a th:href="@{/}"><button type="submit" class="login-button">Entrar</button></a>
+
+        <!-- Link para Cadastro -->
+        <p class="register-link">
+            Ainda não possui uma conta? <a th:href="@{/cadastro}">Cadastre-se</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
