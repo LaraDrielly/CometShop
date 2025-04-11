@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Formulário de Usuário</title>
+    <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
+</head>
+<body>
+<div class="container">
+    <h2 th:text="${usuario.id != null} ? 'Editar Usuário' : 'Novo Usuário'"></h2>
+    <form th:action="@{/admin/usuarios/salvar}" method="post" th:object="${usuario}">
+        <input type="hidden" th:field="*{id}"/>
+
+        <label for="nome">Nome:</label>
+        <input id="nome" type="text" th:field="*{nome}" required/>
+
+        <label for="email">Email:</label>
+        <input id="email" type="email" th:field="*{email}" required/>
+
+        <label for="senha">Senha:</label>
+        <input id="senha" type="password" th:field="*{senha}" required/>
+
+        <button type="submit">Salvar</button>
+    </form>
+</div>
+</body>
+</html>

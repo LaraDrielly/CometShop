@@ -2,26 +2,45 @@ package org.example.cometshop.controller;
 
 import org.example.cometshop.models.Usuario;
 import org.example.cometshop.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
-@RestController
-@RequestMapping("/usuarios")
+@Controller
+@RequestMapping("/admin/usuarios")
 public class UsuarioController {
-    private final UsuarioRepository usuarioRepository;
 
-    public UsuarioController(UsuarioRepository usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
-    }
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @GetMapping
-    public List<Usuario> listar() {
-        return usuarioRepository.findAll();
+    public String listar(Model model) {
+        model.addAttribute("usuarios", usuarioRepository.findAll());
+        return "admin/usuarios/index";
     }
 
-    @PostMapping
-    public Usuario adicionar(@RequestBody Usuario usuario) {
-        return usuarioRepository.save(usuario);
+    @GetMapping("/novo")
+    public String novoUsuarioForm(Model model) {
+        model.addAttribute("usuario", new Usuario());
+        return "admin/usuarios/form";
+    }
+
+    @PostMapping("/salvar")
+    public String salvar(@ModelAttribute Usuario usuario) {
+        usuarioRepository.save(usuario);
+        return "redirect:/admin/usuarios";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String editar(@PathVariable Long id, Model model) {
+        model.addAttribute("usuario", usuarioRepository.findById(id).orElse(new Usuario()));
+        return "admin/usuarios/form";
+    }
+
+    @GetMapping("/remover/{id}")
+    public String remover(@PathVariable Long id) {
+        usuarioRepository.deleteById(id);
+        return "redirect:/admin/usuarios";
     }
 }

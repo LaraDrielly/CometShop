@@ -2,12 +2,8 @@
 <html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comet Shop</title>
+    <title>Admin - Usuários</title>
     <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="header">
@@ -16,19 +12,35 @@
 
 <div class="container">
     <div class="sidebar">
-        <a th:href="@{/areaAdminCliente}">CLIENTES</a>
-        <a th:href="@{/areaAdminProduto}">PRODUTOS</a>
-        <a th:href="@{/areaAdminPedido}">PEDIDOS</a>
-        <a th:href="@{/areaAdminEstoque}">ESTOQUE</a>
+        <a th:href="@{/adminCliente}">USUÁRIOS</a>
+        <a th:href="@{/adminProduto}">PRODUTOS</a>
+        <a th:href="@{/adminPedido}">PEDIDOS</a>
+        <a th:href="@{/adminEstoque}">ESTOQUE</a>
     </div>
 
     <div class="content">
-        <div class="buttons">
-            <button>ADICIONAR</button>
-            <button>LER</button>
-            <button>EDITAR</button>
-            <button>REMOVER</button>
-        </div>
+        <h2>Lista de Usuários</h2>
+        <a th:href="@{/admin/usuarios/novo}" class="btn btn-adicionar">+ Novo Usuário</a>
+        <table>
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="usuario : ${usuarios}">
+                <td th:text="${usuario.nome}">Nome</td>
+                <td th:text="${usuario.email}">Email</td>
+                <td>
+                    <a th:href="@{'/admin/usuarios/editar/' + ${usuario.id}}">Editar</a>
+                    <a th:href="@{'/admin/usuarios/remover/' + ${usuario.id}}"
+                       onclick="return confirm('Remover este usuário?');">Remover</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 </body>
