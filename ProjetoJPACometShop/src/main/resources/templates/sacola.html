@@ -10,55 +10,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="header">
-    <img
-            class="cometshop-logo"
-            th:src="@{/Imagens/CometShop Logo.svg}"
-            alt="Logo da CometShop"
-    />
+<header>
+    <img th:src="@{/Imagens/CometShop Logo.svg}" alt="Logo Comet Shop" class="logo">
+    <div class="icons">
+        <img th:src="@{/Imagens/search.png}" alt="lupa">
+        <input type="text" placeholder="Pesquisar..." class="search-bar">
+        <img th:src="@{/Imagens/user.png}" alt="usuário">
+        <img th:src="@{/Imagens/sacola.png}" alt="sacola" class="sacola">
+    </div>
 </header>
 
-<img th:src="@{/Imagens/voltar.png}" alt="voltar" class="voltar">
+<a th:href="@{/}"><img th:src="@{/Imagens/voltar.png}" alt="seta" class="voltar"></a>
 
 <main class="container">
     <section class="carrinho">
         <div class="product-cards-container">
             <div class="product-cards-container">
                 <div class="product-card">
-                    <img class="product-image" th:src="@{/Imagens/produto.png}" alt="Produto">
+                    <a th:href="@{/produto}">
+                        <img class="product-image" th:src="@{/Imagens/produto.png}" alt="Produto">
+                    </a>
                     <div class="product-info">
                         <div class="product-title">soft pinch tinted lip oil</div>
                         <div class="product-price">R$ 135.00</div>
-                        <div class="quantity-selector">
-                            <button>-</button>
-                            <span>1</span>
-                            <button>+</button>
+                        <div class="quantidade-container">
+                            <button class="menos">−</button>
+                            <span class="quantidade">1</span>
+                            <button class="mais">+</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <img class="product-image" th:src="@{/Imagens/produto.png}" alt="Produto">
+                    <a th:href="@{/produto}">
+                        <img class="product-image" th:src="@{/Imagens/produto.png}" alt="Produto">
+                    </a>
                     <div class="product-info">
                         <div class="product-title">soft pinch tinted lip oil</div>
                         <div class="product-price">R$ 135.00</div>
-                        <div class="quantity-selector">
-                            <button>-</button>
-                            <span>1</span>
-                            <button>+</button>
+                        <div class="quantidade-container">
+                            <button class="menos">−</button>
+                            <span class="quantidade">1</span>
+                            <button class="mais">+</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <img class="product-image" th:src="@{/Imagens/produto.png}" alt="Produto">
+                    <a th:href="@{/produto}">
+                        <img class="product-image" th:src="@{/Imagens/produto.png}" alt="Produto">
+                    </a>
                     <div class="product-info">
                         <div class="product-title">soft pinch tinted lip oil</div>
                         <div class="product-price">R$ 135.00</div>
-                        <div class="quantity-selector">
-                            <button>-</button>
-                            <span>1</span>
-                            <button>+</button>
+                        <div class="quantidade-container">
+                            <button class="menos">−</button>
+                            <span class="quantidade">1</span>
+                            <button class="mais">+</button>
                         </div>
                     </div>
                 </div>
@@ -71,7 +79,9 @@
             <hr>
             <p>Quantidade de produtos: <strong>0</strong></p>
             <p>TOTAL: <strong>R$ 0,00</strong></p>
-            <button class="btn-finalizar">Finalizar Compra</button>
+            <a>
+                <button class="btn-finalizar">Finalizar Compra</button>
+            </a>
         </div>
     </section>
 
@@ -81,22 +91,30 @@
 
         <div class="product-box">
             <div class="product-card2">
-                <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+                <a th:href="@{/produto}">
+                    <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+                </a>
                 <p>Soft Pinch Tinted Lip Oil</p>
                 <button>Adicionar à sacola</button>
             </div>
             <div class="product-card2">
-                <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+                <a th:href="@{/produto}">
+                    <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+                </a>
                 <p>Soft Pinch Tinted Lip Oil</p>
                 <button>Adicionar à sacola</button>
             </div>
             <div class="product-card2">
-                <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+                <a th:href="@{/produto}">
+                    <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+                </a>
                 <p>Soft Pinch Tinted Lip Oil</p>
                 <button>Adicionar à sacola</button>
             </div>
             <div class="product-card2">
-                <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+                <a th:href="@{/produto}">
+                    <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
+                </a>
                 <p>Soft Pinch Tinted Lip Oil</p>
                 <button>Adicionar à sacola</button>
             </div>
@@ -107,5 +125,8 @@
 <footer>
     <p>&copy; 2025 Comet Shop</p>
 </footer>
+
+<script th:src="@{/js/sacola.js}"></script>
+
 </body>
 </html>

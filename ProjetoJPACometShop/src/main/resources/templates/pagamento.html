@@ -39,9 +39,17 @@
             <p>Quantidade de produtos: <strong>3</strong></p>
             <p>TOTAL: <strong>R$ 135,00</strong></p>
         </div>
-        <button class="btn-finalizar">Realizar Compra</button>
-        <button class="btn-cancelar">Cancelar compra</button>
+        <a th:href="@{/msgCompra}">
+            <button class="btn-finalizar">Realizar Compra</button>
+        </a>
+
+        <a th:href="@{/sacola}">
+            <button class="btn-cancelar">Cancelar compra</button>
+        </a>
+
     </div>
 </div>
+<script th:src="@{/js/pagamento.js}"></script>
+
 </body>
 </html>

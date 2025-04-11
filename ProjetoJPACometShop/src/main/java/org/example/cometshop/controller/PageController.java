@@ -41,9 +41,30 @@ public class PageController {
         return "cadastro";
     }
 
-    @GetMapping("/categoria")
-    public String categoria() {
-        return "categoria";
+    @GetMapping("/categoriaCabelos")
+    public String categoriaCabelos() {
+        return "categoriaCabelos";
+    }
+
+    @GetMapping("/categoriaPerfumes")
+    public String categoriaPerfumes() {
+        return "categoriaPerfumes";
+    }
+    @GetMapping("/categoriaUnhas")
+    public String categoriaUnhas() {
+        return "categoriaUnhas";
+    }
+    @GetMapping("/categoriaMaquiagem")
+    public String categoriaMaquiagem() {
+        return "categoriaMaquiagem";
+    }
+    @GetMapping("/categoriaSkinCare")
+    public String categoriaSkinCare() {
+        return "categoriaSkinCare";
+    }
+    @GetMapping("/categoriaCorpoBanho")
+    public String categoriaCorpoBanho() {
+        return "categoriaCorpoBanho";
     }
 
     @GetMapping("/produto")
@@ -61,17 +82,17 @@ public class PageController {
         return "sacola";
     }
 
-    @GetMapping("/sacola-vazia")
+    @GetMapping("/sacolaVazia")
     public String sacolaVazia() {
         return "sacolaVazia";
     }
 
-    @GetMapping("/mensagem")
+    @GetMapping("/msgCompra")
     public String mensagem() {
         return "msgCompra";
     }
 
-    @GetMapping("/login-admin")
+    @GetMapping("/loginAdmin")
     public String loginAdmin() {
         return "loginAdmin";
     }

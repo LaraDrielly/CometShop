@@ -50,7 +50,7 @@ header {
     height: 45px;
 }
 
-.search-bar {
+#buscaTexto {
     padding: 8px 8px;
     border: none;
     border-bottom: 1px solid #620246;
@@ -61,7 +61,7 @@ header {
     outline: none;
 }
 
-.search-bar::placeholder{
+#buscaTexto::placeholder{
     color: #620246;
 }
 
@@ -83,9 +83,15 @@ header {
 .menu {
     width: 90%;
     display: flex;
+    justify-self: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 80px 30px;
+
+    a{
+        text-decoration: none;
+
+    }
 }
 
 .menu div {
@@ -578,4 +584,22 @@ footer {
     color: #FDF6F0;
     text-align: center;
     padding: 20px;
+}
+
+mark {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.contador-sacola {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #620246;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    display: none;
 }
