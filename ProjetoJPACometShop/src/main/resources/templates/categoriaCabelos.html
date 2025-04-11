@@ -21,15 +21,14 @@
 </header>
 
 <a th:href="@{/}"><img th:src="@{/Imagens/voltar.png}" alt="seta" class="voltar"></a>
-
 <main>
     <section class="category">
-        <h1>Produtos de MAQUIAGEM</h1>
+        <h1>Produtos para CABELOS</h1>
         <div class="other-categories">
-            <a th:href="@{/categoriaCabelos}"><button class="other-category-button">Cabelos</button></a>
+            <button id="buttonCategoria" class="other-category-button">Cabelos</button>
             <a th:href="@{/categoriaPerfumes}"><button class="other-category-button">Perfumaria</button></a>
             <a th:href="@{/categoriaUnhas}"><button class="other-category-button">Unhas</button></a>
-            <button id="buttonCategoria" class="other-category-button">Maquiagem</button>
+            <a th:href="@{/categoriaMaquiagem}"><button class="other-category-button">Maquiagem</button></a>
             <a th:href="@{/categoriaSkinCare}"><button class="other-category-button">Skin Care</button></a>
             <a th:href="@{/categoriaCorpoBanho}"><button class="other-category-button">Corpo e banho</button></a>
         </div>
@@ -99,14 +98,16 @@
         </div>
 
     </div>
-</main>
 
-<footer>
-    <p>&copy; 2025 Comet Shop</p>
-</footer>
+    </main>
 
-<script th:src="@{/js/categoria.js}"></script>
-<script th:src="@{/js/buscar.js}"></script>
+    <footer>
+        <p>&copy; 2025 Comet Shop</p>
+    </footer>
+
+    <script th:src="@{/js/categoria.js}"></script>
+    <script th:src="@{/js/buscar.js}"></script>
+
 
 </body>
 </html>
