@@ -18,19 +18,27 @@
         <img th:src="@{/Imagens/search.png}" alt="lupa">
         <input type="text" id="buscaTexto" placeholder="Pesquisar..." class="search-bar">
 
-        <a th:href="@{/login}" class="icon-box">
-            <img th:src="@{/Imagens/user.png}" alt="usuário" class="icon">
-        </a>
-
-        <a th:href="@{/sacola}" class="icon-box">
-            <img th:src="@{/Imagens/sacola.png}" alt="sacola" class="icon">
-        </a>
+            <nav>
+                <ul>
+                    <li>
+                        <a th:href="@{/login}" class="icon-box">
+                            <img th:src="@{/Imagens/user.png}" alt="usuário" class="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a th:href="@{/sacola}" class="icon-box">
+                            <img th:src="@{/Imagens/sacola.png}" alt="sacola" class="icon">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
     </div>
 </header>
 
 
 <img th:src="@{/Imagens/Imagens-Tela Principal/Imagem Main Site (1) (1).png}" alt="capa" class="capaPrincipal">
 
+<div id="areaBusca">
 <div class="menu">
     <a th:href="@{/categoriaCabelos}">
         <div class="btCabelo">
@@ -187,7 +195,7 @@
         <img th:src="@{/Imagens/Imagens-Tela Principal/Imagem Creme.png}" alt="creme">
     </div>
     </div>
-
+</div>
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Comet Shop</p>

@@ -184,3 +184,7 @@ footer {
      font-weight: bold;
      display: none;
 }
+mark {
+    background-color: #A62C81;
+    color: #FFFFFF;
+}
