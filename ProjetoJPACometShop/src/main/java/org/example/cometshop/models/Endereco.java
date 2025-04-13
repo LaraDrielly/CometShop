@@ -1,6 +1,7 @@
 package org.example.cometshop.models;
 
 import jakarta.persistence.*;
+import jakarta.persistence.Id;
 
 @Entity
 public class Endereco {

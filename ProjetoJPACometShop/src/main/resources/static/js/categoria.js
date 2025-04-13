@@ -1,4 +1,3 @@
-
 // Recupera a contagem armazenada ou começa do zero
 let contadorSacola = parseInt(localStorage.getItem('contadorSacola')) || 0;
 
@@ -29,6 +28,23 @@ const botoes = document.querySelectorAll('button');
 botoes.forEach(botao => {
     if (botao.textContent.includes('Adicionar à sacola')) {
         botao.addEventListener('click', () => {
+            // Detalhes do produto
+            const card = botao.closest('.product-card');
+            const nomeProduto = card.querySelector('p').textContent;
+            const imagemProduto = card.querySelector('img').getAttribute('src');
+            const precoProduto = 135.00; // Preço fixo para este exemplo
+
+            // Adiciona o produto ao carrinho no localStorage
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho.push({
+                nome: nomeProduto,
+                imagem: imagemProduto,
+                preco: precoProduto,
+                quantidade: 1
+            });
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+            // Atualiza o contador
             contadorSacola++;
             localStorage.setItem('contadorSacola', contadorSacola); // Salva no localStorage
             contadorElement.textContent = contadorSacola;
@@ -37,20 +53,18 @@ botoes.forEach(botao => {
     }
 });
 
-//método buscar
-//conectar em todas as telas que precisar
+// Método de busca
 document.getElementById('buscaTexto').addEventListener('input', function () {
     const termo = this.value.trim().toLowerCase();
     const areaBusca = document.getElementById('areaBusca');
 
     if (!areaBusca) return;
 
-    // Limpa os destaques antigos mantendo o texto original
     const cards = areaBusca.querySelectorAll('.product-card');
     cards.forEach(card => {
         const p = card.querySelector('p');
         const textoOriginal = p.getAttribute('data-original') || p.textContent;
-        p.setAttribute('data-original', textoOriginal); // salva texto original uma vez
+        p.setAttribute('data-original', textoOriginal);
         p.innerHTML = textoOriginal;
 
         if (termo.length > 0) {
