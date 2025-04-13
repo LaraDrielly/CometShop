@@ -2,7 +2,7 @@ package org.example.cometshop.models;
 
 import jakarta.persistence.*;
 import org.example.cometshop.models.Produto;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 import java.util.List;
 
