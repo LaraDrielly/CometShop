@@ -30,6 +30,10 @@ public class Endereco {
         this.usuario = usuario;
     }
 
+    public Endereco() {
+
+    }
+
     public Long getId() {
         return this.id;
     }
