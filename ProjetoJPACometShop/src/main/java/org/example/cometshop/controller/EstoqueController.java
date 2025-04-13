@@ -2,16 +2,19 @@ package org.example.cometshop.controller;
 
 import org.example.cometshop.models.Categoria;
 import org.example.cometshop.repository.CategoriaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/categorias")
-public class CategoriaController {
+@RequestMapping("/estoque")
+public class EstoqueController {
     private final CategoriaRepository categoriaRepository;
 
-    public CategoriaController(CategoriaRepository categoriaRepository) {
+    @Autowired
+    public EstoqueController(CategoriaRepository categoriaRepository) {
         this.categoriaRepository = categoriaRepository;
     }
 
@@ -21,7 +24,8 @@ public class CategoriaController {
     }
 
     @PostMapping
-    public Categoria adicionar(@RequestBody Categoria categoria) {
-        return categoriaRepository.save(categoria);
+    public ResponseEntity<String> adicionar(@RequestBody Categoria categoria) {
+        categoriaRepository.save(categoria);
+        return ResponseEntity.ok("Estoque inserida com sucesso!");
     }
 }

@@ -1,20 +1,20 @@
 package org.example.cometshop.models;
 
-
 import jakarta.persistence.*;
 
 @Entity
-public class Cartao {
+public class CartaoCredito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_cartao")
     private Long id;
-
-    private String numero;
-    private String nomeTitular;
+    @Column(name = "cod_usuario")
+    private Long codUsuario;
+    @Column(name = "numero_cartao")
+    private String numeroCartao;
     private String validade;
     private String cvv;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 }
