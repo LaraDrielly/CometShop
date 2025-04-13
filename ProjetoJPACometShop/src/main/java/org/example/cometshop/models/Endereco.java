@@ -1,7 +1,6 @@
 package org.example.cometshop.models;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 @Entity
 public class Endereco {
@@ -28,6 +27,10 @@ public class Endereco {
         this.complemento = complemento;
         this.telefoneContato = telefoneContato;
         this.usuario = usuario;
+    }
+
+    public Endereco() {
+
     }
 
     public Long getId() {

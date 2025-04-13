@@ -2,7 +2,6 @@ package org.example.cometshop.models;
 
 import jakarta.persistence.*;
 import org.example.cometshop.models.Produto;
-import org.springframework.data.annotation.Id;
 
 import java.util.List;
 
@@ -17,6 +16,10 @@ public class Categoria {
     public Categoria(Long id, String nome) {
         this.id = id;
         this.nome = nome;
+    }
+
+    public Categoria() {
+
     }
 
     public Long getId() {
