@@ -1,7 +1,7 @@
 package org.example.cometshop.models;
 
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 @Entity
 public class Endereco {
