@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Movimentação de Estoque</title></head>
 <body>
-$END$
+<h1 th:text="${movimentacao.id != null} ? 'Editar Movimentação' : 'Nova Movimentação'"></h1>
+
+<form th:action="@{/admin/estoque/salvar}" th:object="${movimentacao}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Código do Produto:</label>
+    <input type="number" th:field="*{codProduto}" /><br/>
+
+    <label>Tipo de Movimentação:</label>
+    <input type="text" th:field="*{tipoMovimentacao}" /><br/>
+
+    <label>Quantidade:</label>
+    <input type="number" th:field="*{quantidade}" /><br/>
+
+    <label>Data da Movimentação:</label>
+    <input type="date" th:field="*{dataMovimentacao}" /><br/>
+
+    <label>Observação:</label>
+    <input type="text" th:field="*{obsercacao}" /><br/>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<a th:href="@{/admin/estoque}">Voltar</a>
 </body>
 </html>

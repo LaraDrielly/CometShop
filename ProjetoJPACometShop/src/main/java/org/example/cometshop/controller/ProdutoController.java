@@ -10,36 +10,44 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/admin/produtos")
 public class ProdutoController {
+
     @Autowired
     private ProdutoRepository produtoRepository;
 
+    // Listar todos
     @GetMapping
     public String listar(Model model) {
-        model.addAttribute("produtos", produtoRepository.listarTodos());
-        return "admin/produtos/index";
+        model.addAttribute("produtos", produtoRepository.findAll());
+        return "areaAdmin/areaAdminProduto";
     }
 
+    // Formulário de novo produto
     @GetMapping("/novo")
-    public String novo(Model model) {
+    public String novoProduto(Model model) {
         model.addAttribute("produto", new Produto());
-        return "admin/produtos/form";
+        return "areaAdmin/formProduto";
     }
 
-    @PostMapping
+    // Formulário para editar
+    @GetMapping("/editar/{id}")
+    public String editar(@PathVariable Long id, Model model) {
+        Produto produto = produtoRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("ID inválido: " + id));
+        model.addAttribute("produto", produto);
+        return "areaAdmin/formProduto";
+    }
+
+    // Salvar novo ou editar existente
+    @PostMapping("/salvar")
     public String salvar(@ModelAttribute Produto produto) {
-        produtoRepository.salvar(produto);
+        produtoRepository.save(produto);
         return "redirect:/admin/produtos";
     }
 
-    @GetMapping("/editar/{id}")
-    public String editar(@PathVariable Long id, Model model) {
-        model.addAttribute("produto", produtoRepository.buscarPorId(id));
-        return "admin/produtos/form";
-    }
-
+    // Deletar
     @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable Long id) {
-        produtoRepository.excluir(id);
+        produtoRepository.deleteById(id);
         return "redirect:/admin/produtos";
     }
 }

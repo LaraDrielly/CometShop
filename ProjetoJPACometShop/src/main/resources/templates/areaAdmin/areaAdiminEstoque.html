@@ -19,14 +19,31 @@
     <a th:href="@{/areaAdminCliente}">USUÁRIOS</a>
     <a th:href="@{/areaAdminProduto}">PRODUTOS</a>
     <a th:href="@{/areaAdminPedido}">PEDIDOS</a>
-    <a th:href="@{/areaAdminEstoque}">ESTOQUE</a>
+    <a id="buttonAdmin" th:href="@{/areaAdminEstoque}">ESTOQUE</a>
   </div>
 
   <div class="content">
-    <div class="buttons">
-      <a th:href="@{/admin/produtos/novo}" class="btn btn-adicionar">ADICIONAR</a>
-      <a th:href="@{/admin/produtos}" class="btn btn-ler">LER</a>
-    </div>
+    <a th:href="@{/admin/estoque/novo}">Nova Movimentação</a>
+
+    <table>
+      <thead>
+      <tr><th>ID</th><th>Cód. Produto</th><th>Tipo</th><th>Qtd</th><th>Data</th><th>Obs</th><th>Ações</th></tr>
+      </thead>
+      <tbody>
+      <tr th:each="m : ${movimentacoes}">
+        <td th:text="${m.id}">1</td>
+        <td th:text="${m.codProduto}">2</td>
+        <td th:text="${m.tipoMovimentacao}">ENTRADA</td>
+        <td th:text="${m.quantidade}">10</td>
+        <td th:text="${#dates.format(m.dataMovimentacao, 'dd/MM/yyyy')}">13/04/2025</td>
+        <td th:text="${m.obsercacao}">Lote novo</td>
+        <td>
+          <a th:href="@{|/admin/estoque/editar/${m.id}|}">Editar</a>
+          <a th:href="@{|/admin/estoque/excluir/${m.id}|}" onclick="return confirm('Confirma exclusão?')">Excluir</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 </body>

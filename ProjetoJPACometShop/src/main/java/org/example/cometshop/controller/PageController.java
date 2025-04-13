@@ -16,24 +16,24 @@ public class PageController {
         return "login";
     }
 
-    @GetMapping("/adminProduto")
+    @GetMapping("/areaAdminProdutos")
     public String adminProduto() {
         return "areaAdminProduto";
     }
 
-    @GetMapping("/adminCliente")
+    @GetMapping("/areaAdminUsuarios")
     public String adminCliente() {
-        return "areaAdminCliente";
+        return "areaAdminUsuario";
     }
 
-    @GetMapping("/adminEstoque")
+    @GetMapping("/areaAdminEstoque")
     public String adminEstoque() {
         return "areaAdminEstoque";
     }
 
-    @GetMapping("/adminCategoria")
+    @GetMapping("/areaAdminPedidos")
     public String adminCategoria() {
-        return "areaAdminCategoria";
+        return "areaAdminPedido";
     }
 
     @GetMapping("/cadastro")

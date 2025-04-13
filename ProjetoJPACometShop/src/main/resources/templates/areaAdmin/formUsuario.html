@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin - Formulário de Usuário</title>
-    <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Usuário</title></head>
 <body>
-<div class="container">
-    <h2 th:text="${usuario.id != null} ? 'Editar Usuário' : 'Novo Usuário'"></h2>
-    <form th:action="@{/admin/usuarios/salvar}" method="post" th:object="${usuario}">
-        <input type="hidden" th:field="*{id}"/>
+<h1 th:text="${usuario.id != null} ? 'Editar Usuário' : 'Novo Usuário'"></h1>
 
-        <label for="nome">Nome:</label>
-        <input id="nome" type="text" th:field="*{nome}" required/>
+<form th:action="@{/admin/usuarios/salvar}" th:object="${usuario}" method="post">
+    <input type="hidden" th:field="*{id}" />
 
-        <label for="email">Email:</label>
-        <input id="email" type="email" th:field="*{email}" required/>
+    <label>Nome Completo:</label>
+    <input type="text" th:field="*{nomeCompleto}" /><br/>
 
-        <label for="senha">Senha:</label>
-        <input id="senha" type="password" th:field="*{senha}" required/>
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" /><br/>
 
-        <button type="submit">Salvar</button>
-    </form>
-</div>
+    <label>Senha:</label>
+    <input type="password" th:field="*{senha}" /><br/>
+
+    <label>Telefone:</label>
+    <input type="text" th:field="*{telefone}" /><br/>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<a th:href="@{/admin/usuarios}">Voltar</a>
 </body>
 </html>

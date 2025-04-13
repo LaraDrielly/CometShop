@@ -16,19 +16,32 @@
 
 <div class="container">
     <div class="sidebar">
-        <a th:href="@{/areaAdminCliente}">CLIENTES</a>
+        <a th:href="@{/areaAdminCliente}">USUÁRIOS</a>
         <a th:href="@{/areaAdminProduto}">PRODUTOS</a>
-        <a th:href="@{/areaAdminPedido}">PEDIDOS</a>
+        <a id="buttonAdmin" th:href="@{/areaAdminPedido}">PEDIDOS</a>
         <a th:href="@{/areaAdminEstoque}">ESTOQUE</a>
     </div>
 
     <div class="content">
-        <div class="buttons">
-            <button>ADICIONAR</button>
-            <button>LER</button>
-            <button>EDITAR</button>
-            <button>REMOVER</button>
-        </div>
+        <a th:href="@{/admin/pedidos/novo}">Novo Pedido</a>
+
+        <table>
+            <thead>
+            <tr><th>ID</th><th>Cód. Usuário</th><th>Data</th><th>Status</th><th>Ações</th></tr>
+            </thead>
+            <tbody>
+            <tr th:each="pedido : ${pedidos}">
+                <td th:text="${pedido.id}">1</td>
+                <td th:text="${pedido.codUsuario}">10</td>
+                <td th:text="${#dates.format(pedido.dataPedido, 'dd/MM/yyyy')}">12/04/2025</td>
+                <td th:text="${pedido.status}">Em andamento</td>
+                <td>
+                    <a th:href="@{|/admin/pedidos/editar/${pedido.id}|}">Editar</a>
+                    <a th:href="@{|/admin/pedidos/excluir/${pedido.id}|}" onclick="return confirm('Confirma exclusão?')">Excluir</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 </body>
