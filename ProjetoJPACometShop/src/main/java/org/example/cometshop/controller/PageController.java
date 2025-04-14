@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageController {
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home() {
         return "home";
     }
@@ -16,24 +16,24 @@ public class PageController {
         return "login";
     }
 
-    @GetMapping("/adminProduto")
+    @GetMapping("/areaAdminProduto")
     public String adminProduto() {
-        return "areaAdminProduto";
+        return "/areaAdmin/areaAdminProduto";
     }
 
-    @GetMapping("/adminCliente")
-    public String adminCliente() {
-        return "areaAdminCliente";
+    @GetMapping("/areaAdminUsuario")
+    public String adminUsuario() {
+        return "/areaAdmin/areaAdminUsuario";
     }
 
-    @GetMapping("/adminEstoque")
+    @GetMapping("/areaAdminEstoque")
     public String adminEstoque() {
-        return "areaAdminEstoque";
+        return "/areaAdmin/areaAdminEstoque";
     }
 
-    @GetMapping("/adminCategoria")
+    @GetMapping("/areaAdminPedido")
     public String adminCategoria() {
-        return "areaAdminCategoria";
+        return "/areaAdmin/areaAdminPedido";
     }
 
     @GetMapping("/cadastro")

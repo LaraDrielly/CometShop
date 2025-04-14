@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <title>Admin - Usuários</title>
     <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div class="header">
-    <img th:src="@{/imagens/CometShop Logo.svg}" alt="Logo" />
+    <img class="logo"  th:src="@{/imagens/CometShop Logo.svg}" alt="Logo" />
 </div>
 
 <div class="container">
     <div class="sidebar">
-        <a th:href="@{/adminCliente}">USUÁRIOS</a>
-        <a th:href="@{/adminProduto}">PRODUTOS</a>
-        <a th:href="@{/adminPedido}">PEDIDOS</a>
-        <a th:href="@{/adminEstoque}">ESTOQUE</a>
+        <a id="buttonAdmin" th:href="@{/admin/usuarios}">USUÁRIOS</a>
+        <a th:href="@{/admin/produtos}">PRODUTOS</a>
+        <a th:href="@{/admin/pedidos}">PEDIDOS</a>
+        <a th:href="@{/admin/estoque}">ESTOQUE</a>
     </div>
 
     <div class="content">
-        <h2>Lista de Usuários</h2>
-        <a th:href="@{/admin/usuarios/novo}" class="btn btn-adicionar">+ Novo Usuário</a>
+        <a id="novo" th:href="@{/admin/usuarios/novo}">Novo Usuário</a>
         <table>
             <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Ações</th>
-            </tr>
+            <tr><th>ID</th><th>Nome</th><th>Email</th><th>Telefone</th><th>Ações</th></tr>
             </thead>
             <tbody>
             <tr th:each="usuario : ${usuarios}">
-                <td th:text="${usuario.nome}">Nome</td>
-                <td th:text="${usuario.email}">Email</td>
+                <td th:text="${usuario.id}">1</td>
+                <td th:text="${usuario.nomeCompleto}">Fulano</td>
+                <td th:text="${usuario.email}">email@example.com</td>
+                <td th:text="${usuario.telefone}">99999-9999</td>
                 <td>
-                    <a th:href="@{'/admin/usuarios/editar/' + ${usuario.id}}">Editar</a>
-                    <a th:href="@{'/admin/usuarios/remover/' + ${usuario.id}}"
-                       onclick="return confirm('Remover este usuário?');">Remover</a>
+                    <a class="acao" th:href="@{|/admin/usuarios/editar/${usuario.id}|}">EDITAR</a>
+                    <a class="acao" th:href="@{|/admin/usuarios/excluir/${usuario.id}|}" onclick="return confirm('Confirma exclusão?')">EXCLUIR</a>
                 </td>
             </tr>
             </tbody>

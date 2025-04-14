@@ -18,20 +18,13 @@
         <img th:src="@{/Imagens/search.png}" alt="lupa">
         <input type="text" id="buscaTexto" placeholder="Pesquisar..." class="search-bar">
 
-            <nav>
-                <ul>
-                    <li>
-                        <a th:href="@{/login}" class="icon-box">
-                            <img th:src="@{/Imagens/user.png}" alt="usuário" class="icon">
-                        </a>
-                    </li>
-                    <li>
-                        <a th:href="@{/sacola}" class="icon-box">
-                            <img th:src="@{/Imagens/sacola.png}" alt="sacola" class="icon">
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <a th:href="@{/login}" class="icon-box">
+            <img th:src="@{/Imagens/user.png}" alt="usuário" class="icon">
+        </a>
+
+        <a th:href="@{/sacola}" class="icon-box">
+            <img th:src="@{/Imagens/sacola.png}" alt="sacola" class="icon">
+        </a>
     </div>
 </header>
 

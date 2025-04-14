@@ -19,6 +19,15 @@ body {
     width: 145px;
 }
 
+#lock{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
+
 .voltar{
     width: 95px;
     margin-top: -5px;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - CometShop</title>
-    <link rel="stylesheet" th:href="@{/css/loginAdmiin.css}" />
+    <link rel="stylesheet" th:href="@{/css/loginAdmin.css}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     />
 </header>
 
-<img th:src="@{/Imagens/voltar.png}" alt="voltar" class="voltar">
+<a th:href="@{/}"><img th:src="@{/Imagens/voltar.png}" alt="voltar" class="voltar"></a>
 
 <!-- Container do Formulário de Login -->
 <div class="login-container">
@@ -50,7 +50,9 @@
         </div>
 
         <!-- Botão de Entrar -->
-        <button type="submit" class="login-button">Entrar</button>
+        <a th:href="areaAdminUsuario">
+            <button th:href="areaAdminUsuario" type="submit" class="login-button">Entrar</button>
+        </a>
 
 
     </div>

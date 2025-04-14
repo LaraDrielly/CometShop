@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comet Shop</title>
+  <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+  <img class="logo" th:src="@{/imagens/CometShop Logo.svg}" alt="Logo" />
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <a th:href="@{/admin/usuarios}">USUÁRIOS</a>
+    <a th:href="@{/admin/produtos}">PRODUTOS</a>
+    <a th:href="@{/admin/pedidos}">PEDIDOS</a>
+    <a id="buttonAdmin" th:href="@{/admin/estoque}">ESTOQUE</a>
+  </div>
+
+  <div class="content">
+    <a id="novo" th:href="@{/admin/estoque/novo}">Nova Movimentação</a>
+
+    <table>
+      <thead>
+      <tr><th>ID</th><th>Cód. Produto</th><th>Tipo</th><th>Qtd</th><th>Data</th><th>Ações</th></tr>
+      </thead>
+      <tbody>
+      <tr th:each="m : ${movimentacoes}">
+        <td th:text="${m.id}">1</td>
+        <td th:text="${m.codProduto}">2</td>
+        <td th:text="${m.tipoMovimentacao}">ENTRADA</td>
+        <td th:text="${m.quantidade}">10</td>
+        <td th:text="${#dates.format(m.dataMovimentacao, 'dd/MM/yyyy')}">13/04/2025</td>
+        <td>
+          <a th:href="@{|/admin/estoque/editar/${m.id}|}">EDITAR</a>
+          <a th:href="@{|/admin/estoque/excluir/${m.id}|}" onclick="return confirm('Confirma exclusão?')">EXCLUIR</a>
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

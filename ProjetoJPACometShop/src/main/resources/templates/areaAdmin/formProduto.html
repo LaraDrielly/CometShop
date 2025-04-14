@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Produto</title>
+    <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <form th:action="@{/admin/produtos/salvar}" method="post" th:object="${produto}">
-        <input type="hidden" th:field="*{id}" />
+<a id="voltar" th:href="@{/admin/produtos}">← Voltar</a>
 
-        <label>Nome:</label>
-        <input type="text" th:field="*{nome}" />
+<form th:action="@{/admin/produtos/salvar}" th:object="${produto}" method="post">
 
-        <label>Preço:</label>
-        <input type="number" th:field="*{preco}" step="0.01" />
+    <h1 id="title" th:text="${produto.id != null} ? 'Editar Produto' : 'Adicionar Produto'">Produto</h1>
 
-        <label>Descrição:</label>
-        <textarea th:field="*{descricao}"></textarea>
+    <input type="hidden" th:field="*{id}" />
 
-        <button type="submit">Salvar</button>
-    </form>
+    <label>Nome</label>
+    <input type="text" th:field="*{nome}" /><br/>
+
+    <label>Preço</label>
+    <input type="number"  th:field="*{preco}" /><br/>
+
+    <label>Descrição</label>
+    <input type="text" th:field="*{descricao}" /><br/>
+
+    <label>Categoria (ID)</label>
+    <input type="number" th:field="*{cod_categoria}" /><br/>
+
+
+    <button type="submit">Salvar</button>
+</form>
 </body>
 </html>
