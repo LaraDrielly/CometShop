@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comet Shop</title>
-    <link rel="stylesheet" th:href="@{/css/sacolaVazia.css}">
+    <link rel="stylesheet" href="../static/css/sacolaVazia.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-    <img th:src="@{/Imagens/CometShop Logo.svg}" alt="Logo Comet Shop" class="logo">
+    <img src="../static/Imagens/CometShop%20Logo.svg" alt="Logo Comet Shop" class="logo">
     <div class="icons">
-        <img th:src="@{/Imagens/search.png}" alt="lupa">
+        <img src="../static/Imagens/search.png" alt="lupa">
         <input type="text" placeholder="Pesquisar..." class="search-bar">
-        <img th:src="@{/Imagens/user.png}" alt="usuário">
-        <img th:src="@{/Imagens/sacola.png}" alt="sacola" class="sacola">
+        <img src="../static/Imagens/user.png" alt="usuário">
+        <img src="../static/Imagens/sacola.png" alt="sacola" class="sacola">
     </div>
 </header>
 
-<a th:href="@{/}"><img th:src="@{/Imagens/voltar.png}" alt="seta" class="voltar"></a>
+<a href="home.html"><img src="../static/Imagens/voltar.png" alt="seta" class="voltar"></a>
 
-<section class="carrinho">
-    <div class="sacola-vazia">
-        <img th:src="@{/Imagens/Sacola Icon.png}" alt="Sacola Vazia">
-        <div>
-            <p>Sua sacola está vazia</p>
-            <a href="#">Confira nossos produtos</a>
-        </div>
-    </div>
+<main class="container">
+    <section class="carrinho-vazio">
+        <img src="../static/Imagens/sacola-vazia.png" alt="Sacola vazia" class="sacola-vazia-img">
+        <h2>Sua sacola está vazia</h2>
+        <p>Parece que você ainda não adicionou nenhum item à sua sacola.</p>
+        <a href="/categoriaCabelos">
+            <button class="btn-continuar">Continuar comprando</button>
+        </a>
+    </section>
 
     <div class="resumo">
         <h2>Resumo da compra</h2>
@@ -37,43 +38,44 @@
         <p>Quantidade de produtos: <strong>0</strong></p>
         <p>TOTAL: <strong>R$ 0,00</strong></p>
     </div>
-</section>
 
-<section class="you-might-like">
-    <h2>Você Também</h2>
-    <h2>Pode Gostar</h2>
 
-    <div class="product-box">
-        <div class="product-card">
-            <a th:href="@{/produto}">
-                <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
-            </a>
-            <p>Soft Pinch Tinted Lip Oil</p>
-            <button>Adicionar à sacola</button>
+    <section class="you-might-like">
+        <h2>Você Também</h2>
+        <h2>Pode Gostar</h2>
+
+        <div class="product-box">
+            <div class="product-card">
+                <a href="produto.html">
+                    <img src="../static/Imagens/produto2.webp" alt="Soft Pinch Tinted Lip Oil">
+                </a>
+                <p>Soft Pinch Tinted Lip Oil</p>
+                <button>Adicionar à sacola</button>
+            </div>
+            <div class="product-card">
+                <a href="produto.html">
+                    <img src="../static/Imagens/produto2.webp" alt="Soft Pinch Tinted Lip Oil">
+                </a>
+                <p>Soft Pinch Tinted Lip Oil</p>
+                <button>Adicionar à sacola</button>
+            </div>
+            <div class="product-card">
+                <a href="produto.html">
+                    <img src="../static/Imagens/produto2.webp" alt="Soft Pinch Tinted Lip Oil">
+                </a>
+                <p>Soft Pinch Tinted Lip Oil</p>
+                <button>Adicionar à sacola</button>
+            </div>
+            <div class="product-card">
+                <a href="produto.html">
+                    <img src="../static/Imagens/produto2.webp" alt="Soft Pinch Tinted Lip Oil">
+                </a>
+                <p>Soft Pinch Tinted Lip Oil</p>
+                <button>Adicionar à sacola</button>
+            </div>
         </div>
-        <div class="product-card">
-            <a th:href="@{/produto}">
-                <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
-            </a>
-            <p>Soft Pinch Tinted Lip Oil</p>
-            <button>Adicionar à sacola</button>
-        </div>
-        <div class="product-card">
-            <a th:href="@{/produto}">
-                <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
-            </a>
-            <p>Soft Pinch Tinted Lip Oil</p>
-            <button>Adicionar à sacola</button>
-        </div>
-        <div class="product-card">
-            <a th:href="@{/produto}">
-                <img th:src="@{/Imagens/produto2.webp}" alt="Soft Pinch Tinted Lip Oil">
-            </a>
-            <p>Soft Pinch Tinted Lip Oil</p>
-            <button>Adicionar à sacola</button>
-        </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <footer>
     <p>&copy; 2025 Comet Shop</p>

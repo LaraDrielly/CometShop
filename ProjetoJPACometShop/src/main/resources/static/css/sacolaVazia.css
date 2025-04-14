@@ -214,3 +214,45 @@ footer {
     width: 96%;
     color: white;
 }
+
+/* Adicione ao sacola.css */
+.carrinho-vazio {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.sacola-vazia-img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.carrinho-vazio h2 {
+    font-family: "Playfair Display";
+    color: #620246;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.carrinho-vazio p {
+    font-family: "Klee One";
+    font-size: 18px;
+    color: #620246;
+    margin-bottom: 30px;
+}
+
+.btn-continuar {
+    background-color: #620246;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-family: "Klee One";
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-continuar:hover {
+    background-color: #4a0133;
+}

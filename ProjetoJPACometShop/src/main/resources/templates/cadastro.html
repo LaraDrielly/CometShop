@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro - CometShop</title>
-    <link rel="stylesheet" th:href="@{/css/cadastro.css}">
+    <link rel="stylesheet" href="../static/css/cadastro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -12,17 +12,17 @@
 <body>
     <!-- Cabeçalho -->
     <header class="header">
-        <img th:src="@{/Imagens/CometShop Logo.svg}" alt="Logo Comet Shop" class="cometshop-logo">
+        <img src="../static/Imagens/CometShop%20Logo.svg" alt="Logo Comet Shop" class="cometshop-logo">
     </header>
 
-    <a th:href="@{/login}"><img th:src="@{/Imagens/voltar.png}" alt="voltar" class="voltar"></a>
+    <a href="login.html"><img src="../static/Imagens/voltar.png" alt="voltar" class="voltar"></a>
     <!-- Container do Formulário de Login -->
     <div class="login-container">
     <h1 id="title">Realize seu cadastro</h1>
 
     <!-- Campo de Nome -->
     <div class="input-field">
-        <input
+        <label for="nome"></label><input
                 type= "text"
                 id="nome"
                 name="Nome"
@@ -32,7 +32,7 @@
 
     <!-- Campo de E-mail -->
     <div class="input-field">
-        <input
+        <label for="email"></label><input
                 type="email"
                 id="email"
                 name="email"
@@ -43,7 +43,7 @@
 
     <!-- Campo de Senha -->
     <div class="input-field">
-        <input
+        <label for="senha"></label><input
                 type="password"
                 id="senha"
                 name="senha"
@@ -53,7 +53,7 @@
     </div>
     <!-- Campo de Telefone -->
     <div class="input-field">
-        <input
+        <label for="telefone"></label><input
                 type="tel"
                 id="telefone"
                 name="telefone"
@@ -61,14 +61,10 @@
                 required
         />
     </div>
-
-    <!-- Botão de Entrar -->
-    <a th:href="@{/}"><button type="submit" class="login-button">Cadastrar-se</button></a>
-
-    </div>
+        <!-- Botão de Entrar -->
+        <button type="button" id="btnCadastrar" class="login-button">Cadastrar-se</button>
     </div>
 
-    <script th:src="@{/js/cadastro.js}"></script>
-
+    <script src="../static/js/cadastro.js"></script>
 </body>
 </html>

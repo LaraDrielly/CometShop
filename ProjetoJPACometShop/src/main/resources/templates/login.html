@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:hrefth="http://www.w3.org/1999/xhtml">
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xmlns:href="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - CometShop</title>
-    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <link rel="stylesheet" href="../static/css/login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -14,13 +14,13 @@
 <header class="header">
     <img
             class="cometshop-logo"
-            th:src="@{/Imagens/CometShop Logo.svg}"
+            src="../static/Imagens/CometShop%20Logo.svg"
             alt="Logo da CometShop"
     />
 </header>
 
 
-<a th:href="@{/}"><img th:src="@{/Imagens/voltar.png}" alt="voltar" class="voltar"></a>
+<a href="home.html"><img src="../static/Imagens/voltar.png" alt="voltar" class="voltar"></a>
 <!-- Container do Formulário de Login -->
 <div class="login-container">
     <div class="login-box">
@@ -50,11 +50,11 @@
         </div>
 
         <!-- Botão de Entrar -->
-        <a th:href="@{/}"><button type="submit" class="login-button">Entrar</button></a>
+        <a href="home.html"><button type="submit" class="login-button">Entrar</button></a>
 
         <!-- Link para Cadastro -->
         <p class="register-link">
-            Ainda não possui uma conta? <a th:href="@{/cadastro}">Cadastre-se</a>
+            Ainda não possui uma conta? <a href="cadastro.html">Cadastre-se</a>
         </p>
     </div>
 </div>

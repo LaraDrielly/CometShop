@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento - Comet Shop</title>
-    <link rel="stylesheet" th:href="@{/css/pagamento.css}">
+    <link rel="stylesheet" href="../static/css/pagamento.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="header">
-    <img th:src="@{/Imagens/CometShop Logo.svg}" alt="">
+    <img src="../static/Imagens/CometShop%20Logo.svg" alt="">
 </div>
 <div class="container">
     <div class="box">
@@ -39,17 +39,17 @@
             <p>Quantidade de produtos: <strong>3</strong></p>
             <p>TOTAL: <strong>R$ 135,00</strong></p>
         </div>
-        <a th:href="@{/msgCompra}">
+        <a href="msgCompra.html">
             <button class="btn-finalizar">Realizar Compra</button>
         </a>
 
-        <a th:href="@{/sacola}">
+        <a href="sacola.html">
             <button class="btn-cancelar">Cancelar compra</button>
         </a>
 
     </div>
 </div>
-<script th:src="@{/js/pagamento.js}"></script>
+<script src="../static/js/pagamento.js"></script>
 
 </body>
 </html>
