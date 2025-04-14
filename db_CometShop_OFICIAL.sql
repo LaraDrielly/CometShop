@@ -49,7 +49,7 @@ CREATE TABLE produto (
 CREATE TABLE imagem_produto (
     id_imagem SERIAL PRIMARY KEY,
     cod_produto INTEGER NOT NULL REFERENCES produto(id_produto) ON DELETE CASCADE,
-    url TEXT NOT NULL
+    url VARCHAR(3050) NOT NULL
 );
 
 -- Tabela de movimentações de estoque
