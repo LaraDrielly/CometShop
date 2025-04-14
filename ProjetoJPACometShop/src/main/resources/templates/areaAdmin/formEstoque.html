@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movimentação de Estoque</title>
+    <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<a id="voltar" th:href="@{/admin/estoque}">← Voltar</a>
+
+<form th:action="@{/admin/estoque/salvar}" th:object="${movimentacao}" method="post">
+    <h1 id="title" th:text="${movimentacao.id != null} ? 'Editar Movimentação' : 'Nova Movimentação'"></h1>
+
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Código do Produto:</label>
+    <input type="number" th:field="*{codProduto}" /><br/>
+
+    <label>Tipo de Movimentação:</label>
+    <input type="text" th:field="*{tipoMovimentacao}" /><br/>
+
+    <label>Quantidade:</label>
+    <input type="number" th:field="*{quantidade}" /><br/>
+
+    <label>Data da Movimentação:</label>
+    <input type="date" th:field="*{dataMovimentacao}" /><br/>
+
+    <label>Observação:</label>
+    <input type="text" th:field="*{obsercacao}" /><br/>
+
+    <button type="submit">Salvar</button>
+</form>
+
+</body>
+</html>

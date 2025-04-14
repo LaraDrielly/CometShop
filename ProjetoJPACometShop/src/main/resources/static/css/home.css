@@ -28,12 +28,17 @@ header {
 .icons {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 12px;
-
-    a{
-        text-decoration: none;
-    }
 }
+
+nav{
+    display: flex;
+    margin:0 auto;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
 
 .icons img {
     height: 20px;

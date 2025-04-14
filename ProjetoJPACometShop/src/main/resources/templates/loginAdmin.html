@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - CometShop</title>
-    <link rel="stylesheet" href="../static/css/loginAdmin.css" />
+    <link rel="stylesheet" th:href="@{/css/loginAdmin.css}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -14,12 +14,12 @@
 <header class="header">
     <img
             class="cometshop-logo"
-            src="../static/Imagens/CometShop%20Logo.svg"
+            th:src="@{/Imagens/CometShop Logo.svg}"
             alt="Logo da CometShop"
     />
 </header>
 
-<img src="../static/Imagens/voltar.png" alt="voltar" class="voltar">
+<a th:href="@{/}"><img th:src="@{/Imagens/voltar.png}" alt="voltar" class="voltar"></a>
 
 <!-- Container do Formulário de Login -->
 <div class="login-container">
@@ -50,7 +50,9 @@
         </div>
 
         <!-- Botão de Entrar -->
-        <button type="submit" class="login-button">Entrar</button>
+        <a th:href="areaAdminUsuario">
+            <button th:href="areaAdminUsuario" type="submit" class="login-button">Entrar</button>
+        </a>
 
 
     </div>

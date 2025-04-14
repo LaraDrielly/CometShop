@@ -11,33 +11,32 @@
 </head>
 <body>
 <div class="header">
-    <img class="logo" th:src="@{/imagens/CometShop Logo.svg}" alt="Logo" />
+    <img class="logo"  th:src="@{/imagens/CometShop Logo.svg}" alt="Logo" />
 </div>
 
 <div class="container">
     <div class="sidebar">
-        <a th:href="@{/admin/usuarios}">USUÁRIOS</a>
-        <a id="buttonAdmin" th:href="@{/admin/produtos}">PRODUTOS</a>
+        <a id="buttonAdmin" th:href="@{/admin/usuarios}">USUÁRIOS</a>
+        <a th:href="@{/admin/produtos}">PRODUTOS</a>
         <a th:href="@{/admin/pedidos}">PEDIDOS</a>
         <a th:href="@{/admin/estoque}">ESTOQUE</a>
     </div>
 
     <div class="content">
-        <a id="novo" th:href="@{/admin/produtos/novo}">Novo Produto</a>
-
+        <a id="novo" th:href="@{/admin/usuarios/novo}">Novo Usuário</a>
         <table>
             <thead>
-            <tr><th>ID</th><th>Nome</th><th>Preço</th><th>Descrição</th><th>Ações</th></tr>
+            <tr><th>ID</th><th>Nome</th><th>Email</th><th>Telefone</th><th>Ações</th></tr>
             </thead>
             <tbody>
-            <tr th:each="produto : ${produtos}">
-                <td th:text="${produto.id}">1</td>
-                <td th:text="${produto.nome}">Produto</td>
-                <td th:text="${produto.preco}">100.00</td>
-                <td th:text="${produto.descricao}">Descricao</td>
+            <tr th:each="usuario : ${usuarios}">
+                <td th:text="${usuario.id}">1</td>
+                <td th:text="${usuario.nomeCompleto}">Fulano</td>
+                <td th:text="${usuario.email}">email@example.com</td>
+                <td th:text="${usuario.telefone}">99999-9999</td>
                 <td>
-                    <a class="acao" th:href="@{|/admin/produtos/editar/${produto.id}|}">EDITAR</a>
-                    <a class="acao" th:href="@{|/admin/produtos/excluir/${produto.id}|}" onclick="return confirm('Confirma exclusão?')">EXCLUIR</a>
+                    <a class="acao" th:href="@{|/admin/usuarios/editar/${usuario.id}|}">EDITAR</a>
+                    <a class="acao" th:href="@{|/admin/usuarios/excluir/${usuario.id}|}" onclick="return confirm('Confirma exclusão?')">EXCLUIR</a>
                 </td>
             </tr>
             </tbody>
