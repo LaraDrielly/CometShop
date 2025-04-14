@@ -1,11 +1,14 @@
 package org.example.cometshop.controller;
 
+import org.example.cometshop.models.Produto;
 import org.example.cometshop.models.Usuario;
 import org.example.cometshop.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin/usuarios")
@@ -15,17 +18,18 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
 
     // Listar todos
-    @GetMapping
-    public String listar(Model model) {
-        model.addAttribute("usuarios", usuarioRepository.findAll());
-        return "admin/usuarios/index";
+    @GetMapping("")
+    public String listarProdutos(Model model) {
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        model.addAttribute("usuarios", usuarios);
+        return "areaAdmin/areaAdminUsuario";
     }
 
     // Formulário de novo usuário
     @GetMapping("/novo")
-    public String novo(Model model) {
+    public String novoUsuario(Model model) {
         model.addAttribute("usuario", new Usuario());
-        return "admin/usuarios/form";
+        return "areaAdmin/formUsuario";
     }
 
     // Editar

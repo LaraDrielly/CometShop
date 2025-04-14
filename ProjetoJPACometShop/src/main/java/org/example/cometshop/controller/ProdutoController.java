@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/admin/produtos")
 public class ProdutoController {
@@ -15,9 +17,10 @@ public class ProdutoController {
     private ProdutoRepository produtoRepository;
 
     // Listar todos
-    @GetMapping
-    public String listar(Model model) {
-        model.addAttribute("produtos", produtoRepository.findAll());
+    @GetMapping("")
+    public String listarProdutos(Model model) {
+        List<Produto> produtos = produtoRepository.findAll();
+        model.addAttribute("produtos", produtos);
         return "areaAdmin/areaAdminProduto";
     }
 

@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Pedido</title></head>
-<body>
-<h1 th:text="${pedido.id != null} ? 'Editar Pedido' : 'Novo Pedido'"></h1>
+<head>
+    <title>Pedido</title>
+    <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
-<form th:action="@{/admin/pedidos/salvar}" th:object="${pedido}" method="post">
+</head>
+<body>
+
+<a id="voltar" th:href="@{/admin/pedidos}">← Voltar</a>
+
+<form th:action="@{/areaAdminPedido/salvar}" th:object="${pedido}" method="post">
+    <h1 id="title" th:text="${pedido.id != null} ? 'Editar Pedido' : 'Novo Pedido'"></h1>
+
     <input type="hidden" th:field="*{id}" />
 
     <label>Código do Usuário:</label>
@@ -18,7 +28,5 @@
 
     <button type="submit">Salvar</button>
 </form>
-
-<a th:href="@{/admin/pedidos}">Voltar</a>
 </body>
 </html>

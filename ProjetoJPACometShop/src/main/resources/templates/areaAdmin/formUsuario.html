@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>Usuário</title></head>
+<head>
+    <title>Usuário</title>
+    <link rel="stylesheet" th:href="@{/css/areaadmin.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Klee+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+</head>
 <body>
-<h1 th:text="${usuario.id != null} ? 'Editar Usuário' : 'Novo Usuário'"></h1>
+<a id="voltar" th:href="@{/admin/usuarios}">← Voltar</a>
 
 <form th:action="@{/admin/usuarios/salvar}" th:object="${usuario}" method="post">
+    <h1 id="title" th:text="${usuario.id != null} ? 'Editar Usuário' : 'Novo Usuário'"></h1>
+
     <input type="hidden" th:field="*{id}" />
 
     <label>Nome Completo:</label>
@@ -21,7 +30,5 @@
 
     <button type="submit">Salvar</button>
 </form>
-
-<a th:href="@{/admin/usuarios}">Voltar</a>
 </body>
 </html>

@@ -11,19 +11,19 @@
 </head>
 <body>
 <div class="header">
-    <img th:src="@{/imagens/CometShop Logo.svg}" alt="Logo" />
+    <img class="logo" th:src="@{/imagens/CometShop Logo.svg}" alt="Logo" />
 </div>
 
 <div class="container">
     <div class="sidebar">
-        <a th:href="@{/areaAdminCliente}">USUÁRIOS</a>
-        <a th:href="@{/areaAdminProduto}">PRODUTOS</a>
-        <a id="buttonAdmin" th:href="@{/areaAdminPedido}">PEDIDOS</a>
-        <a th:href="@{/areaAdminEstoque}">ESTOQUE</a>
+        <a th:href="@{/admin/usuarios}">USUÁRIOS</a>
+        <a th:href="@{/admin/produtos}">PRODUTOS</a>
+        <a id="buttonAdmin" th:href="@{/admin/pedidos}">PEDIDOS</a>
+        <a th:href="@{/admin/estoque}">ESTOQUE</a>
     </div>
 
     <div class="content">
-        <a th:href="@{/admin/pedidos/novo}">Novo Pedido</a>
+        <a id="novo" th:href="@{/admin/pedidos/novo}">Novo Pedido</a>
 
         <table>
             <thead>
@@ -36,8 +36,8 @@
                 <td th:text="${#dates.format(pedido.dataPedido, 'dd/MM/yyyy')}">12/04/2025</td>
                 <td th:text="${pedido.status}">Em andamento</td>
                 <td>
-                    <a th:href="@{|/admin/pedidos/editar/${pedido.id}|}">Editar</a>
-                    <a th:href="@{|/admin/pedidos/excluir/${pedido.id}|}" onclick="return confirm('Confirma exclusão?')">Excluir</a>
+                    <a th:href="@{|/admin/pedidos/editar/${pedido.id}|}">EDITAR</a>
+                    <a th:href="@{|/admin/pedidos/excluir/${pedido.id}|}" onclick="return confirm('Confirma exclusão?')">EXCLUIR</a>
                 </td>
             </tr>
             </tbody>

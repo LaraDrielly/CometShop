@@ -1,11 +1,14 @@
 package org.example.cometshop.controller;
 
 import org.example.cometshop.models.Pedido;
+import org.example.cometshop.models.Produto;
 import org.example.cometshop.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin/pedidos")
@@ -14,16 +17,17 @@ public class PedidoController {
     @Autowired
     private PedidoRepository pedidoRepository;
 
-    @GetMapping
-    public String listar(Model model) {
-        model.addAttribute("pedidos", pedidoRepository.findAll());
-        return "admin/pedidos/index";
+    @GetMapping("")
+    public String listarPedidos(Model model) {
+        List<Pedido> pedidos = pedidoRepository.findAll();
+        model.addAttribute("pedidos", pedidos);
+        return "areaAdmin/areaAdminPedido";
     }
 
     @GetMapping("/novo")
-    public String novo(Model model) {
+    public String novoPedido(Model model) {
         model.addAttribute("pedido", new Pedido());
-        return "admin/pedidos/form";
+        return "areaAdmin/formPedido";
     }
 
     @GetMapping("/editar/{id}")
