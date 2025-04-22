@@ -100,3 +100,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const qtd = localStorage.getItem("quantidadeProdutos");
+    const preco = localStorage.getItem("precoTotal");
+
+    if (qtd && preco) {
+        const qtdEl = document.getElementById("resumo-qtd");
+        const precoEl = document.getElementById("resumo-total");
+
+        if (qtdEl && precoEl) {
+            qtdEl.textContent = qtd;
+            precoEl.textContent = preco;
+        }
+    }
+});

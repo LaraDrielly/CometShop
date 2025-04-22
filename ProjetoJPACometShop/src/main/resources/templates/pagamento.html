@@ -13,32 +13,41 @@
 <div class="header">
     <img th:src="@{/Imagens/CometShop Logo.svg}" alt="">
 </div>
+
 <div class="container">
     <div class="box">
         <h2>Endereço de entrega</h2>
-        <input type="text" placeholder="CEP" maxlength="8">
-        <input type="text" placeholder="Bairro">
-        <input type="text" placeholder="Rua / Avenida">
-        <input type="text" placeholder="Número">
-        <input type="text" placeholder="Complemento">
-        <input type="text" placeholder="Telefone de contato">
+        <input type="text" id="cep" placeholder="CEP" maxlength="8" onblur="buscarCep()">
+        <input type="text" id="bairro" placeholder="Bairro">
+        <input type="text" id="endereco" placeholder="Rua / Avenida">
+        <input type="text" id="campoNumerico" placeholder="Número">
+        <input type="text" id="complemento" placeholder="Complemento">
+        <input type="text" id="telefone" placeholder="Telefone de contato">
+
         <h2>Forma de pagamento</h2>
-        <label><input type="checkbox" name="pagamento" value="cartao">
+        <label>
+            <input type="checkbox" name="pagamento" value="cartao">
             <div class="cartao">
-                <input type="text" placeholder="Nº do cartão" maxlength="19">
-                <input type="text" placeholder="CVV" maxlength="3">
+                <input type="text" id="cartaoNumero" placeholder="Nº do cartão" maxlength="19">
+                <input type="text" id="cartaoCVV" placeholder="CVV" maxlength="4">
                 <input type="date" placeholder="Data de validade">
-            </div></label>
-        <label><input type="checkbox" name="pagamento" value="pix"> <span class="pix">Pix</span>
+            </div>
+        </label>
+
+        <label>
+            <input type="checkbox" name="pagamento" value="pix"> <span class="pix">Pix</span>
         </label>
     </div>
+
     <div class="box2">
         <div class="resumo">
             <h2>Resumo da compra</h2>
             <hr>
-            <p>Quantidade de produtos: <strong>3</strong></p>
-            <p>TOTAL: <strong>R$ 135,00</strong></p>
+            <p>Quantidade de produtos: <strong id="resumo-qtd">0</strong></p>
+            <p>TOTAL: <strong id="resumo-total">R$ 0,00</strong></p>
+
         </div>
+
         <a th:href="@{/msgCompra}">
             <button class="btn-finalizar">Realizar Compra</button>
         </a>
@@ -46,9 +55,9 @@
         <a th:href="@{/sacola}">
             <button class="btn-cancelar">Cancelar compra</button>
         </a>
-
     </div>
 </div>
+
 <script th:src="@{/js/pagamento.js}"></script>
 
 </body>
