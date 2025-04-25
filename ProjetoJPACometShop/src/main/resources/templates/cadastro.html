@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,59 +16,33 @@
     </header>
 
     <a th:href="@{/login}"><img th:src="@{/Imagens/voltar.png}" alt="voltar" class="voltar"></a>
-    <!-- Container do Formulário de Login -->
-    <div class="login-container">
-    <h1 id="title">Realize seu cadastro</h1>
 
-    <!-- Campo de Nome -->
-    <div class="input-field">
-        <input
-                type= "text"
-                id="nome"
-                name="Nome"
-                placeholder="Nome Completo"
-        />
-    </div>
+    <form th:action="@{/admin/usuarios/cadastro}" method="post" th:object="${usuario}" class="login-container">
+        <h1 id="title">Realize seu cadastro</h1>
 
-    <!-- Campo de E-mail -->
-    <div class="input-field">
-        <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="E-mail"
-                required
-        />
-    </div>
+        <div class="input-field">
+            <input type="text" th:field="*{nomeCompleto}" placeholder="Nome Completo" required />
+        </div>
 
-    <!-- Campo de Senha -->
-    <div class="input-field">
-        <input
-                type="password"
-                id="senha"
-                name="senha"
-                placeholder="Senha"
-                required
-        />
-    </div>
-    <!-- Campo de Telefone -->
-    <div class="input-field">
-        <input
-                type="tel"
-                id="telefone"
-                name="telefone"
-                placeholder="Telefone"
-                required
-        />
-    </div>
+        <div class="input-field">
+            <input type="email" th:field="*{email}" placeholder="E-mail" required />
+        </div>
 
-    <!-- Botão de Entrar -->
-    <a th:href="@{/}"><button type="submit" class="login-button">Cadastrar-se</button></a>
+        <div class="input-field">
+            <input type="password" th:field="*{senha}" placeholder="Senha" required />
+        </div>
 
-    </div>
-    </div>
+        <div class="input-field">
+            <input type="tel" th:field="*{telefone}" placeholder="Telefone" required />
+        </div>
+
+        <div th:if="${erro != null}" style="color: red;">
+            <p th:text="${erro}"></p>
+        </div>
+
+        <button type="submit" class="login-button">Cadastrar-se</button>
+    </form>
 
     <script th:src="@{/js/cadastro.js}"></script>
-
 </body>
 </html>

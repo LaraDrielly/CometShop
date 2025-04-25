@@ -57,6 +57,7 @@ body {
     font-weight: 500;
     font-size: 32px;
     margin-bottom: 30px;
+    margin-top: -13px;
 }
 
 input {
@@ -90,7 +91,7 @@ input::placeholder{
 }
 
 .register-link{
-    margin-top: 20px;
+    margin-top: 10px;
     font-family: "klee one";
 
     a{

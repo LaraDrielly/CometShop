@@ -12,6 +12,7 @@ public class Usuario {
     private Long id;
     @Column(name = "nome_completo")
     private String nomeCompleto;
+    @Column(unique = true)
     private String email;
     private String senha;
     private String telefone;

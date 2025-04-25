@@ -9,12 +9,17 @@ public class ImagemProduto {
     @Column(name = "id_imagem")
     private Long id;
     private Long cod_produto;
+    @Column(columnDefinition = "TEXT")
     private String url;
 
     public ImagemProduto(Long id, Long cod_produto, String url) {
         this.id = id;
         this.cod_produto = cod_produto;
         this.url = url;
+    }
+
+    public ImagemProduto() {
+
     }
 
     public Long getId() {
